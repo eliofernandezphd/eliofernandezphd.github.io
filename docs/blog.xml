@@ -6,14 +6,14 @@
       version="2.0">
 <channel>
 <title>Elio Fernandez</title>
-<link>https://eliofernandez.github.io/blog.html</link>
-<atom:link href="https://eliofernandez.github.io/blog.xml" rel="self" type="application/rss+xml"/>
+<link>https://eliofernandezphd.github.io/blog.html</link>
+<atom:link href="https://eliofernandezphd.github.io/blog.xml" rel="self" type="application/rss+xml"/>
 <description>Maps, explainers, and notes on environmental planning in Florida.</description>
 <generator>quarto-1.10.18</generator>
 <lastBuildDate>Mon, 05 Oct 2026 04:00:00 GMT</lastBuildDate>
 <item>
   <title>Why I’m putting my research out in the open</title>
-  <link>https://eliofernandez.github.io/posts/welcome/</link>
+  <link>https://eliofernandezphd.github.io/posts/welcome/</link>
   <description><![CDATA[ 
 
 
@@ -34,9 +34,9 @@
 
  ]]></description>
   <category>about</category>
-  <guid>https://eliofernandez.github.io/posts/welcome/</guid>
+  <guid>https://eliofernandezphd.github.io/posts/welcome/</guid>
   <pubDate>Mon, 05 Oct 2026 04:00:00 GMT</pubDate>
-  <media:content url="https://eliofernandez.github.io/assets/art/hero-topo.webp" medium="image" type="image/webp"/>
+  <media:content url="https://eliofernandezphd.github.io/assets/art/hero-topo.webp" medium="image" type="image/webp"/>
 </item>
 </channel>
 </rss>

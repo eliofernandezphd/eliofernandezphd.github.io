@@ -10,7 +10,7 @@ project:
 website:
   title: "Elio Fernandez"
   description: "Sustainability, Environmental Justice, Urban–Rural Planning, and Water Quality research in Florida."
-  site-url: "https://eliofernandez.github.io"
+  site-url: "https://eliofernandezphd.github.io"
   open-graph: true
   page-navigation: false
   navbar:
