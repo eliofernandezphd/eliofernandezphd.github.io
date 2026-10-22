@@ -57,8 +57,8 @@
 
   require([
     "esri/Map", "esri/views/MapView", "esri/layers/FeatureLayer", "esri/layers/TileLayer", "esri/Basemap",
-    "esri/widgets/Legend", "esri/widgets/Expand", "esri/widgets/Home"
-  ], function (Map, MapView, FeatureLayer, TileLayer, Basemap, Legend, Expand, Home) {
+    "esri/widgets/Legend", "esri/widgets/Expand", "esri/widgets/Home", "esri/core/reactiveUtils"
+  ], function (Map, MapView, FeatureLayer, TileLayer, Basemap, Legend, Expand, Home, reactiveUtils) {
     try {
       var view = new MapView({ container: "impaired-map",
         map: new Map({ basemap: new Basemap({ baseLayers: [new TileLayer({ url: "https://services.arcgisonline.com/arcgis/rest/services/Canvas/World_Light_Gray_Base/MapServer" })] }) }),
@@ -107,7 +107,14 @@
     Promise.all([p1, p2]).then(function () {
       // Nudge the view once so the newly visible layers draw at the starting zoom
       view.when(function () { var c = view.center.clone(); view.goTo({ center: c, zoom: view.zoom + 0.001 }, { animate: false }).then(function () { return view.goTo({ center: c, zoom: 6 }, { animate: false }); }).catch(function () {}); });
-      if (good === 2) status.hidden = true;
+      if (good === 2) {
+        say("Drawing Florida's waterbodies. This can take 10 to 20 seconds…");
+        var layers = view.map.layers.toArray();
+        Promise.all(layers.map(function (l) { return view.whenLayerView(l).then(function (lv) {
+          return reactiveUtils.whenOnce(function () { return !lv.updating; });
+        }); })).then(function () { status.hidden = true; }, function () { status.hidden = true; });
+        setTimeout(function () { status.hidden = true; }, 45000);
+      }
       else if (good === 1) { say("Part of the map loaded. <small>" + notes.join("; ") + "</small>"); setTimeout(function () { status.hidden = true; }, 8000); }
       else fail("no layers loaded");
     });

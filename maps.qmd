@@ -24,9 +24,9 @@ Florida checks the health of its rivers, lakes, springs, estuaries, and coastal 
 
 ```{=html}
 <div class="viewer map live-map">
-  <iframe src="assets/impaired-map/index.html?v=3" title="Map of Florida waterbodies showing which are on the state's verified impaired list" loading="lazy" allowfullscreen></iframe>
+  <iframe src="assets/impaired-map/index.html?v=4" title="Map of Florida waterbodies showing which are on the state's verified impaired list" loading="lazy" allowfullscreen></iframe>
 </div>
-<p class="links"><a href="assets/impaired-map/index.html?v=3">Open the map full screen</a></p>
+<p class="links"><a href="assets/impaired-map/index.html?v=4">Open the map full screen</a></p>
 ```
 
 ```{=html}
