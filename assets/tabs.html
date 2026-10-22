@@ -1,0 +1,65 @@
+<script>
+// Carousel tab menu: the row loops endlessly in both directions.
+document.addEventListener("DOMContentLoaded", function () {
+  var nav = document.querySelector(".navbar .navbar-nav");
+  if (!nav) return;
+  var wrap = nav.parentElement;
+  var originals = Array.prototype.slice.call(nav.children);
+  if (!originals.length) return;
+
+  // One copy of the tabs before and after the real ones, hidden from screen readers and the Tab key
+  function cloneSet() {
+    return originals.map(function (li) {
+      var c = li.cloneNode(true);
+      c.classList.add("tab-clone");
+      c.setAttribute("aria-hidden", "true");
+      c.querySelectorAll("a").forEach(function (a) { a.setAttribute("tabindex", "-1"); });
+      return c;
+    });
+  }
+  var before = cloneSet(), after = cloneSet();
+  before.forEach(function (c) { nav.insertBefore(c, originals[0]); });
+  after.forEach(function (c) { nav.appendChild(c); });
+  wrap.classList.add("tabs-loop");
+
+  function setWidth() { return originals[0].offsetLeft - before[0].offsetLeft; }
+  function jump(x) {
+    nav.style.scrollBehavior = "auto";
+    nav.scrollLeft = x;
+    nav.style.scrollBehavior = "";
+  }
+  function recenter() {
+    var w = setWidth(), x = nav.scrollLeft;
+    if (x < w * 0.5) jump(x + w);
+    else if (x > w * 1.5) jump(x - w);
+  }
+
+  // Start with the current page's tab in the middle
+  var active = nav.querySelector("li:not(.tab-clone) .nav-link.active") || originals[0].querySelector(".nav-link");
+  var li = active.parentElement;
+  jump(li.offsetLeft - nav.clientWidth / 2 + li.offsetWidth / 2);
+  recenter();
+
+  var t;
+  nav.addEventListener("scroll", function () { clearTimeout(t); t = setTimeout(recenter, 120); }, { passive: true });
+  window.addEventListener("resize", recenter);
+
+  function mk(dir) {
+    var b = document.createElement("button");
+    b.type = "button";
+    b.className = "tab-arrow tab-arrow-" + dir;
+    b.setAttribute("aria-label", dir === "left" ? "Previous tabs" : "Next tabs");
+    b.innerHTML = dir === "left" ? "&#8249;" : "&#8250;";
+    b.addEventListener("click", function () {
+      recenter();
+      nav.scrollBy({ left: (dir === "left" ? -1 : 1) * nav.clientWidth * 0.5, behavior: "smooth" });
+    });
+    wrap.appendChild(b);
+  }
+  mk("left"); mk("right");
+
+  nav.addEventListener("wheel", function (e) {
+    if (Math.abs(e.deltaY) > Math.abs(e.deltaX)) { nav.scrollLeft += e.deltaY; e.preventDefault(); }
+  }, { passive: false });
+});
+</script>

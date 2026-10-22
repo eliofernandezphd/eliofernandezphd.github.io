@@ -1,0 +1,59 @@
+project:
+  type: website
+  output-dir: docs
+  resources:
+    - assets/maps/*
+  render:
+    - "*.qmd"
+    - "!posts/_template/"
+
+website:
+  title: "Elio Fernandez"
+  description: "Sustainability, Environmental Justice, Urban–Rural Planning, and Water Quality research in Florida."
+  site-url: "https://eliofernandez.github.io"
+  open-graph: true
+  page-navigation: false
+  navbar:
+    collapse: false
+    left:
+      - href: index.qmd
+        text: Home
+      - href: sustainability.qmd
+        text: Sustainability
+      - href: environmental-justice.qmd
+        text: Environmental Justice
+      - href: urban-rural-planning.qmd
+        text: Urban–Rural Planning
+      - href: water-quality.qmd
+        text: Water Quality
+      - href: interdisciplinary.qmd
+        text: Interdisciplinary & Transdisciplinary
+      - href: dissertation.qmd
+        text: Dissertation
+      - href: e-geospatial.qmd
+        text: E-Geospatial
+      - href: maps.qmd
+        text: Maps
+      - href: blog.qmd
+        text: Blog
+      - href: publications.qmd
+        text: Publications
+      - href: about.qmd
+        text: About
+  page-footer:
+    left: "Elio Fernandez, Florida State University"
+    right:
+      - text: Email
+        href: mailto:efernandez3@fsu.edu
+      - text: LinkedIn
+        href: https://www.linkedin.com/in/elio-fernandez-0034851b4/
+
+format:
+  html:
+    theme: [cosmo, assets/theme.scss]
+    css: assets/site.css
+    toc: false
+    smooth-scroll: true
+    link-external-newwindow: true
+    include-after-body: assets/tabs.html
+    lightbox: auto

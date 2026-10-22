@@ -1,0 +1,32 @@
+/*-- scss:defaults --*/
+
+// Palette: a topo sheet over Florida water.
+$paper:      #F2F5F3;  // cool map-sheet white
+$ink:        #15302B;  // blackwater river
+$ink-soft:   #46605A;
+$spring:     #1F7F99;  // spring-fed blue, used for links
+$sawgrass:   #6E8A2C;  // used once or twice for emphasis
+$rule:       #C9D6D1;
+
+$body-bg: $paper;
+$body-color: $ink;
+$link-color: $spring;
+$link-decoration: underline;
+$primary: $spring;
+$secondary: $ink-soft;
+
+$navbar-bg: $paper;
+$navbar-fg: $ink;
+$navbar-hl: $spring;
+$footer-bg: $paper;
+$footer-fg: $ink-soft;
+
+$font-family-sans-serif: "Source Serif 4", Georgia, serif;
+$headings-font-family: "Archivo", "Helvetica Neue", Arial, sans-serif;
+$headings-font-weight: 800;
+$headings-color: $ink;
+$font-size-root: 18px;
+$line-height-base: 1.65;
+$border-radius: 4px;
+
+/*-- scss:rules --*/

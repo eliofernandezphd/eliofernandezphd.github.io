@@ -1,0 +1,21 @@
+---
+body-classes: p-water
+title: "Why I'm putting my research out in the open"
+description: "What this site is for, and what's coming."
+date: 2026-10-05
+categories: [about]
+image: ../../assets/art/hero-topo.webp
+---
+
+Most research ends up in a journal article or a conference talk that a few hundred people see. But the questions I work on, like how growth reaches rural counties, who lives with environmental burdens, and what's happening to Florida's water, belong to everyone who lives here.
+
+So this is where I'll share the work as it happens.
+
+What to expect:
+
+- **Maps** with plain-language notes
+- **Explainers** on Florida planning
+- **Research updates**
+- **Reading picks** from the news and journals
+
+If you want somewhere to start, try the [maps](../../maps.qmd).

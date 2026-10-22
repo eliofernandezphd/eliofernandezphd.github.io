@@ -1,0 +1,53 @@
+---
+body-classes: p-inter
+title: "Interdisciplinary & Transdisciplinary Research"
+description: "Social and quantitative sciences, working on the same problems."
+---
+
+![](assets/art/theme-interdisciplinary.webp){.banner fig-alt="Overlapping colored circles representing different fields"}
+
+Environmental problems cut across fields. I draw on the social sciences to understand people, policy, and power, and on the quantitative sciences to measure what's happening on the ground.
+
+Transdisciplinary work goes one step further, bringing in the knowledge of communities, agencies, and practitioners outside academia so the research answers questions people in Florida are actually asking.
+
+## A Short History of Interdisciplinary &amp; Transdisciplinary Research
+
+Working across fields is an old idea, but it took off as researchers faced problems no single discipline could solve.
+
+```{=html}
+<details class="history">
+<summary><span class="sum-open">Show the timeline</span><span class="sum-close">Hide the timeline</span> <span class="sum-meta">9 moments, 1959–2012</span></summary>
+<ol class="timeline">
+  <li class="era">Two cultures</li>
+  <li><span class="yr">1959</span><div><h4><em>The Two Cultures</em></h4><p>C. P. Snow warns that the sciences and humanities have stopped talking to each other.</p></div></li>
+  <li><span class="yr">1970</span><div><h4>Transdisciplinarity is named</h4><p>Jean Piaget uses the term at an OECD seminar on interdisciplinary teaching and research.</p></div></li>
+  <li class="era">Problems that cross boundaries</li>
+  <li><span class="yr">1973</span><div><h4>Wicked problems</h4><p>Horst Rittel and Melvin Webber argue planning problems have no single right answer and can't be solved by one discipline.</p></div></li>
+  <li><span class="yr">1984</span><div><h4>Complexity science</h4><p>The Santa Fe Institute is founded to study complex systems across physics, biology, economics, and social science.</p></div></li>
+  <li><span class="yr">1994</span><div><h4>Mode 2 knowledge</h4><p>Michael Gibbons and colleagues describe research that is organized around real-world problems instead of disciplines.</p></div></li>
+  <li class="era">Science with society</li>
+  <li><span class="yr">2001</span><div><h4>Sustainability science</h4><p>Robert Kates and colleagues call for a new field linking nature and society to support sustainable development.</p></div></li>
+  <li><span class="yr">2004</span><div><h4><em>Facilitating Interdisciplinary Research</em></h4><p>The U.S. National Academies recommend ways for universities and funders to support work across fields.</p></div></li>
+  <li><span class="yr">2009</span><div><h4>Social-ecological systems</h4><p>Elinor Ostrom publishes a framework for studying how people and ecosystems shape each other.</p></div></li>
+  <li><span class="yr">2012</span><div><h4>Transdisciplinary practice</h4><p>Daniel Lang and colleagues set out principles for research that includes communities and practitioners from the start.</p></div></li>
+</ol>
+</details>
+```
+
+## Fields I Draw On
+
+```{=html}
+<div class="fields">
+  <div class="c-ej"><h3>Social Sciences</h3><ul><li>Sociology</li><li>Economics</li><li>Political science</li><li>Psychology</li></ul></div>
+  <div class="c-water"><h3>Quantitative Sciences</h3><ul><li>Physics</li><li>Mathematics</li><li>Engineering</li></ul></div>
+  <div class="c-sus"><h3>Methods</h3><ul><li>GIS & spatial analysis</li><li>Policy analysis</li><li>Interviews</li><li>Statistical modeling</li></ul></div>
+</div>
+```
+
+## Key Readings
+
+- Gibbons, M., et al. (1994). <em>The New Production of Knowledge</em>. Sage.
+- Kates, R. W., et al. (2001). Sustainability science. <em>Science</em>, 292(5517), 641–642.
+- Lang, D. J., et al. (2012). Transdisciplinary research in sustainability science: Practice, principles, and challenges. <em>Sustainability Science</em>, 7(S1), 25–43.
+- Ostrom, E. (2009). A general framework for analyzing sustainability of social-ecological systems. <em>Science</em>, 325(5939), 419–422.
+- Rittel, H. W. J., &amp; Webber, M. M. (1973). Dilemmas in a general theory of planning. <em>Policy Sciences</em>, 4(2), 155–169.

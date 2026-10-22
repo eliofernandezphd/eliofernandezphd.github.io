@@ -1,0 +1,61 @@
+---
+body-classes: p-water
+title: "Water Quality"
+description: "Springs, rivers, and the aquifer beneath them."
+---
+
+![](assets/art/theme-water.webp){.banner fig-alt="Blue contour map with a winding river"}
+
+How land use and policy affect Florida's springs, rivers, and groundwater, and how planning can protect them.
+
+```{=html}
+<ul class="tags c-water"><li>Nutrient pollution</li><li>Springs & rivers</li><li>Groundwater</li><li>Water policy</li></ul>
+```
+
+## A Short History of Water Quality
+
+Water quality science began with tracing disease and grew into regulating everything from factory pipes to farm runoff.
+
+```{=html}
+<details class="history">
+<summary><span class="sum-open">Show the timeline</span><span class="sum-close">Hide the timeline</span> <span class="sum-meta">11 moments, 1854–2024</span></summary>
+<ol class="timeline">
+  <li class="era">Foundations</li>
+  <li><span class="yr">1854</span><div><h4>The Broad Street pump</h4><p>John Snow maps cholera deaths in London and traces them to a contaminated well, an early landmark of public health and spatial analysis.</p></div></li>
+  <li><span class="yr">1908</span><div><h4>Chlorinated drinking water</h4><p>Jersey City becomes the first U.S. city to disinfect its public water supply continuously with chlorine.</p></div></li>
+  <li class="era">Federal regulation</li>
+  <li><span class="yr">1969</span><div><h4>The Cuyahoga River fire</h4><p>A burning river in Ohio becomes a national symbol of water pollution.</p></div></li>
+  <li><span class="yr">1972</span><div><h4>Clean Water Act</h4><p>Congress requires permits for pollution discharged from pipes and sets the goal of fishable, swimmable waters.</p></div></li>
+  <li><span class="yr">1974</span><div><h4>Safe Drinking Water Act</h4><p>EPA gets the authority to set national standards for public drinking water.</p></div></li>
+  <li><span class="yr">1987</span><div><h4>Nonpoint source pollution</h4><p>Amendments to the Clean Water Act add a program for runoff from farms, lawns, and streets, now the leading cause of impaired waters.</p></div></li>
+  <li><span class="yr">1993</span><div><h4>The biosolids rule</h4><p>EPA's Part 503 rule sets national standards for applying treated sewage sludge to land.</p></div></li>
+  <li class="era">New challenges</li>
+  <li><span class="yr">1998</span><div><h4>Nutrient pollution</h4><p>Stephen Carpenter and colleagues show how nitrogen and phosphorus runoff drive algae blooms in lakes and rivers.</p></div></li>
+  <li><span class="yr">2014</span><div><h4>Flint and Toledo</h4><p>Lead contamination in Flint and an algae toxin in Toledo's water supply show how drinking water failures fall hardest on some communities.</p></div></li>
+  <li><span class="yr">2023</span><div><h4><em>Sackett v. EPA</em></h4><p>The Supreme Court narrows which wetlands the Clean Water Act protects.</p></div></li>
+  <li><span class="yr">2024</span><div><h4>PFAS limits</h4><p>EPA sets the first national drinking water limits for PFAS "forever chemicals." In 2025 it moves to roll back some of them.</p></div></li>
+</ol>
+</details>
+```
+
+## In Florida
+
+Florida sits on porous limestone, so what happens on the land can reach springs, rivers, and the aquifer most residents drink from. That makes land-use planning a water-quality decision.
+
+```{=html}
+<ol class="timeline compact">
+  <li><span class="yr">1947</span><div><h4>Everglades National Park</h4><p>The park is established to protect part of the River of Grass.</p></div></li>
+  <li><span class="yr">1994</span><div><h4>Everglades Forever Act</h4><p>Florida sets phosphorus limits and builds treatment marshes to clean water flowing into the Everglades.</p></div></li>
+  <li><span class="yr">1999</span><div><h4>Watershed Restoration Act</h4><p>Florida begins setting pollution limits for impaired waters and later adopts basin plans, including one for Lake Okeechobee.</p></div></li>
+  <li><span class="yr">2000</span><div><h4>Comprehensive Everglades Restoration Plan</h4><p>The state and federal governments launch a decades-long plan to restore water flow through South Florida.</p></div></li>
+  <li><span class="yr">2016</span><div><h4>Springs and Aquifer Protection Act</h4><p>Outstanding Florida Springs get recovery plans to reduce pollution and over-pumping.</p></div></li>
+  <li><span class="yr">2021</span><div><h4>New biosolids rule</h4><p>Florida's updated biosolids rule takes effect, aimed at keeping phosphorus from biosolids out of waterways.</p></div></li>
+</ol>
+```
+
+## Key Readings
+
+- Carpenter, S. R., et al. (1998). Nonpoint pollution of surface waters with phosphorus and nitrogen. <em>Ecological Applications</em>, 8(3), 559–568.
+- Grunwald, M. (2006). <em>The Swamp: The Everglades, Florida, and the Politics of Paradise</em>. Simon &amp; Schuster.
+- Karr, J. R., &amp; Dudley, D. R. (1981). Ecological perspective on water quality goals. <em>Environmental Management</em>, 5(1), 55–68.
+- Snow, J. (1855). <em>On the Mode of Communication of Cholera</em> (2nd ed.). John Churchill.

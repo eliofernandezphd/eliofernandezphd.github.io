@@ -1,0 +1,14 @@
+---
+body-classes: p-water
+title: "Blog"
+description: "Maps, explainers, and notes on environmental planning in Florida."
+listing:
+  contents: posts
+  sort: "date desc"
+  type: default
+  categories: true
+  sort-ui: false
+  filter-ui: false
+  fields: [date, title, description, categories]
+  feed: true
+---

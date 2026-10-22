@@ -1,0 +1,25 @@
+---
+body-classes: p-rural
+title: "E-Geospatial"
+description: "A small side project for maps and planning help."
+---
+
+![](assets/art/theme-rural.webp){.banner fig-alt="Patchwork of farm parcels crossed by a county road"}
+
+E-Geospatial is my little side project for GIS and planning help. If you need a map, have a question about a property, or want help making sense of local planning rules, reach out and we can see if it's a fit.
+
+## Things I can help with
+
+```{=html}
+<ul class="tags c-rural">
+  <li>Custom maps</li><li>Data cleanup</li><li>Spatial analysis</li>
+  <li>Property research</li><li>Permitting questions</li>
+</ul>
+```
+
+```{=html}
+<div class="actions" style="margin-top:2rem">
+  <a class="primary" href="mailto:efernandez3@fsu.edu?subject=E-Geospatial">Email me</a>
+  <a href="https://sites.google.com/view/e-geospatial/home">E-Geospatial site</a>
+</div>
+```

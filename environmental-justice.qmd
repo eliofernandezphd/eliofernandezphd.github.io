@@ -1,0 +1,66 @@
+---
+body-classes: p-ej
+title: "Environmental Justice"
+description: "Who carries the burdens, and who gets a say."
+---
+
+![](assets/art/theme-justice.webp){.banner fig-alt="Warm-toned map with community points of different sizes"}
+
+Who ends up living with environmental burdens, how those patterns form, and who gets a voice in the decisions behind them.
+
+```{=html}
+<ul class="tags c-ej"><li>Burden distribution</li><li>Public participation</li><li>Policy equity</li><li>Race &amp; class</li></ul>
+```
+
+## A Short History of Environmental Justice
+
+Environmental justice grew out of Black-led community protests in the 1980s. Ever since, its central questions have been how race and class shape who lives with pollution and who gets a say.
+
+```{=html}
+<details class="history">
+<summary><span class="sum-open">Show the timeline</span><span class="sum-close">Hide the timeline</span> <span class="sum-meta">14 moments, 1979–2025</span></summary>
+<ol class="timeline">
+  <li class="era">Roots of the movement</li>
+  <li><span class="yr">1979</span><div><h4><em>Bean v. Southwestern Waste</em></h4><p>Houston residents use civil rights law to challenge the siting of a landfill in their neighborhood, one of the first lawsuits of its kind.</p></div></li>
+  <li><span class="yr">1982</span><div><h4>Warren County protests</h4><p>Residents of a majority-Black county in North Carolina protest a PCB landfill, and hundreds are arrested. It's often called the birth of the movement.</p></div></li>
+  <li><span class="yr">1983</span><div><h4>The GAO landfill study</h4><p>A federal study finds three of four hazardous waste landfills in the Southeast are in majority-Black communities.</p></div></li>
+  <li><span class="yr">1987</span><div><h4><em>Toxic Wastes and Race</em></h4><p>A national study by the United Church of Christ finds race is the strongest predictor of where hazardous waste facilities are located.</p></div></li>
+  <li class="era">Building a field</li>
+  <li><span class="yr">1990</span><div><h4><em>Dumping in Dixie</em></h4><p>Robert Bullard documents how Black communities in the South bear the burden of polluting facilities, laying the groundwork for EJ research.</p></div></li>
+  <li><span class="yr">1991</span><div><h4>Principles of Environmental Justice</h4><p>The First National People of Color Environmental Leadership Summit adopts 17 principles that still guide the movement.</p></div></li>
+  <li><span class="yr">1994</span><div><h4>Executive Order 12898</h4><p>Federal agencies are directed to address disproportionate environmental impacts on minority and low-income communities.</p></div></li>
+  <li class="era">Race, class, or both?</li>
+  <li><span class="yr">1994</span><div><h4>Which came first?</h4><p>Vicki Been asks whether polluting facilities are sited in poor communities of color, or whether housing markets push lower-income residents toward them after they're built. The race-versus-class debate shapes the field for decades.</p></div></li>
+  <li><span class="yr">2007</span><div><h4><em>Toxic Wastes and Race at Twenty</em></h4><p>Bullard, Mohai, Saha, and Wright update the 1987 study with better methods and find racial disparities are even larger than first reported, even after accounting for income.</p></div></li>
+  <li><span class="yr">2007</span><div><h4>Three dimensions of justice</h4><p>David Schlosberg's <em>Defining Environmental Justice</em> separates distribution (who bears burdens), recognition (whose concerns count), and participation (who decides).</p></div></li>
+  <li><span class="yr">2014</span><div><h4><em>Toxic Communities</em></h4><p>Dorceta Taylor shows how residential segregation, housing discrimination, and land markets concentrate pollution in communities of color.</p></div></li>
+  <li><span class="yr">2016</span><div><h4>Beyond the city</h4><p>Rural scholars show the same patterns of race and class play out in rural places too. More on the <a href="urban-rural-planning.html">Urban–Rural Planning</a> page.</p></div></li>
+  <li class="era">Today</li>
+  <li><span class="yr">2021</span><div><h4>Justice40</h4><p>A federal initiative aims to direct 40% of the benefits of certain federal investments to disadvantaged communities.</p></div></li>
+  <li><span class="yr">2025</span><div><h4>Federal rollback</h4><p>A new executive order revokes Executive Order 12898 and other federal environmental justice orders.</p></div></li>
+</ol>
+</details>
+```
+
+## In Florida
+
+In Florida, the costs of growth and waste don't land evenly. Some communities, often Black, Latino, or lower-income, end up hosting the facilities and land uses that others avoid, with less say in how those decisions get made.
+
+```{=html}
+<ol class="timeline compact">
+  <li><span class="yr">1968</span><div><h4>Overtown and I-95</h4><p>Interstate 95 is routed through Overtown, the historic heart of Black Miami. Its construction directly displaces about 8,500 households.</p></div></li>
+  <li><span class="yr">1996</span><div><h4>"Mount Dioxin," Pensacola</h4><p>After years of organizing by Citizens Against Toxic Exposure, Black residents living beside the Escambia Wood Treating Superfund site win relocation for 358 households.</p></div></li>
+  <li><span class="yr">2018</span><div><h4>Climate gentrification</h4><p>A Harvard study finds homes on higher ground in Miami-Dade gaining value faster than low-lying ones, raising concern that rising costs will push lower-income residents out of neighborhoods like Little Haiti.</p></div></li>
+</ol>
+```
+
+## Key Readings
+
+- Been, V. (1994). Locally undesirable land uses in minority neighborhoods: Disproportionate siting or market dynamics? <em>Yale Law Journal</em>, 103(6), 1383–1422.
+- Bullard, R. D. (1990). <em>Dumping in Dixie: Race, Class, and Environmental Quality</em>. Westview Press.
+- Bullard, R. D., Mohai, P., Saha, R., &amp; Wright, B. (2007). <em>Toxic Wastes and Race at Twenty: 1987–2007</em>. United Church of Christ Justice and Witness Ministries.
+- Commission for Racial Justice, United Church of Christ. (1987). <em>Toxic Wastes and Race in the United States</em>.
+- Fernandez, E. (2026). Urban-rural transfer and distributive environmental justice in biosolids land application: A geographic information systems (GIS) analysis of Florida. <em>Journal of Rural Studies</em>, 126, 104324.
+- Schlosberg, D. (2007). <em>Defining Environmental Justice: Theories, Movements, and Nature</em>. Oxford University Press.
+- Keenan, J. M., Hill, T., &amp; Gumber, A. (2018). Climate gentrification: From theory to empiricism in Miami-Dade County, Florida. <em>Environmental Research Letters</em>, 13(5), 054001.
+- Taylor, D. E. (2014). <em>Toxic Communities: Environmental Racism, Industrial Pollution, and Residential Mobility</em>. NYU Press.

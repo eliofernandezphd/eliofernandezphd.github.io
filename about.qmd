@@ -1,0 +1,29 @@
+---
+body-classes: p-sus
+title: "About"
+---
+
+I'm a PhD candidate in Urban and Regional Planning at Florida State University. My research is interdisciplinary, drawing on the social and quantitative sciences to study Sustainability, Environmental Justice, Urban–Rural Planning, and Water Quality in Florida.
+
+## Education
+
+**Florida State University**
+
+- PhD, Urban & Regional Planning (in progress)
+- MS, Urban & Regional Planning
+- MS, Geographic Information Science
+- BS, Geography, minor in Planning
+
+::: {.todo}
+Add graduation years, and drop a PDF of your CV in the site folder as cv.pdf so it can be linked here.
+:::
+
+## Teaching & mentorship
+
+- Interdisciplinary Social Sciences, FSU
+- Undergraduate Research Opportunity Program (UROP), FSU
+
+## Contact
+
+- Email: [efernandez3@fsu.edu](mailto:efernandez3@fsu.edu)
+- [LinkedIn](https://www.linkedin.com/in/elio-fernandez-0034851b4/)

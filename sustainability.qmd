@@ -1,0 +1,74 @@
+---
+body-classes: p-sus
+title: "Sustainability"
+description: "Keeping Florida livable for the long run."
+---
+
+![](assets/art/theme-sustainability.webp){.banner fig-alt="Green contour map with scattered tree canopy"}
+
+How planning choices about growth, land, and resources shape whether Florida stays livable, and what it takes to plan for the long term.
+
+```{=html}
+<ul class="tags c-sus"><li>Resource systems</li><li>Growth management</li><li>Resilience</li><li>Land use</li></ul>
+```
+
+## A Short History of Sustainability
+
+Sustainability started as a rule for managing forests and grew into one of the central ideas in planning. These are the moments that shaped how the field thinks about it today.
+
+```{=html}
+<details class="history">
+<summary><span class="sum-open">Show the timeline</span><span class="sum-close">Hide the timeline</span> <span class="sum-meta">17 moments, 1713–2017</span></summary>
+<ol class="timeline">
+  <li class="era">Roots</li>
+  <li><span class="yr">1713</span><div><h4>Sustained yield</h4><p>Hans Carl von Carlowitz, a German mining official, argues forests should only be cut as fast as they regrow. His word, <em>nachhaltig</em>, is the origin of "sustainable."</p></div></li>
+  <li><span class="yr">1798</span><div><h4>Limits of resources</h4><p>Thomas Malthus warns that population can outpace food supply, starting a long debate about growth and natural limits.</p></div></li>
+  <li><span class="yr">1864</span><div><h4><em>Man and Nature</em></h4><p>George Perkins Marsh shows how human activity degrades land and water, one of the first systematic accounts of environmental damage.</p></div></li>
+  <li><span class="yr">1949</span><div><h4>The land ethic</h4><p>Aldo Leopold's <em>A Sand County Almanac</em> argues people are members of a land community, not just its users.</p></div></li>
+
+  <li class="era">Environmental awakening</li>
+  <li><span class="yr">1962</span><div><h4><em>Silent Spring</em></h4><p>Rachel Carson documents the effects of pesticides, helping launch the modern environmental movement.</p></div></li>
+  <li><span class="yr">1968</span><div><h4>Tragedy of the commons</h4><p>Garrett Hardin argues shared resources get overused when individuals act in their own interest.</p></div></li>
+  <li><span class="yr">1969</span><div><h4><em>Design with Nature</em></h4><p>Ian McHarg layers maps of soils, water, and habitat to decide where development fits. It's a direct ancestor of GIS-based planning.</p></div></li>
+  <li><span class="yr">1972</span><div><h4><em>The Limits to Growth</em></h4><p>A computer-modeling study for the Club of Rome projects that unchecked growth will hit planetary limits. The UN holds its first environment conference in Stockholm the same year.</p></div></li>
+
+  <li class="era">Sustainable development</li>
+  <li><span class="yr">1987</span><div><h4>The Brundtland definition</h4><p>The UN report <em>Our Common Future</em> defines sustainable development as meeting present needs "without compromising the ability of future generations to meet their own needs."</p></div></li>
+  <li><span class="yr">1990</span><div><h4>Governing the commons</h4><p>Elinor Ostrom shows communities can manage shared resources well without privatization or top-down control. She later wins the 2009 Nobel Prize in Economics.</p></div></li>
+  <li><span class="yr">1992</span><div><h4>Rio Earth Summit</h4><p>Nations adopt Agenda 21, which pushes sustainability down to local governments and planning.</p></div></li>
+  <li><span class="yr">1994</span><div><h4>Triple bottom line</h4><p>John Elkington frames sustainability as balancing economic, social, and environmental outcomes.</p></div></li>
+
+  <li class="era">Planning and justice</li>
+  <li><span class="yr">1996</span><div><h4>The planner's triangle</h4><p>Scott Campbell's "Green Cities, Growing Cities, Just Cities?" shows planners are caught between economic growth, environmental protection, and social equity, and that these goals often conflict.</p></div></li>
+  <li><span class="yr">2003</span><div><h4>Just sustainabilities</h4><p>Julian Agyeman, Robert Bullard, and Bob Evans argue sustainability can't be separated from equity and environmental justice.</p></div></li>
+
+  <li class="era">Today</li>
+  <li><span class="yr">2009</span><div><h4>Planetary boundaries</h4><p>Johan Rockström and colleagues identify nine Earth systems, from climate to nitrogen cycles, with limits humanity shouldn't cross.</p></div></li>
+  <li><span class="yr">2015</span><div><h4>Sustainable Development Goals</h4><p>The UN adopts 17 goals for 2030, including clean water, sustainable cities, and reduced inequality.</p></div></li>
+  <li><span class="yr">2017</span><div><h4>Doughnut economics</h4><p>Kate Raworth pictures a safe zone between meeting everyone's basic needs and staying within planetary limits.</p></div></li>
+</ol>
+</details>
+```
+
+## In Florida
+
+Florida keeps growing, and every new neighborhood, road, and treatment plant commits land and resources for decades. Sustainability in planning means weighing those long-term costs before they're locked in.
+
+```{=html}
+<ol class="timeline compact">
+  <li><span class="yr">1972</span><div><h4>Areas of Critical State Concern</h4><p>The Environmental Land and Water Management Act lets the state protect places like the Florida Keys and Big Cypress from harmful development.</p></div></li>
+  <li><span class="yr">1985</span><div><h4>Growth Management Act</h4><p>Every city and county must adopt a comprehensive plan, with state review and a requirement that infrastructure keep pace with growth.</p></div></li>
+  <li><span class="yr">2011</span><div><h4>Community Planning Act</h4><p>The state scales back its oversight of local plans and eliminates the Department of Community Affairs, shifting more control to local governments.</p></div></li>
+  <li><span class="yr">2016</span><div><h4>Springs and Aquifer Protection Act</h4><p>Florida designates Outstanding Florida Springs and requires recovery plans for springs harmed by pollution and over-pumping.</p></div></li>
+</ol>
+```
+
+## Key Readings
+
+- Agyeman, J., Bullard, R. D., & Evans, B. (Eds.). (2003). *Just Sustainabilities: Development in an Unequal World*. MIT Press.
+- Campbell, S. (1996). Green cities, growing cities, just cities? Urban planning and the contradictions of sustainable development. *Journal of the American Planning Association*, 62(3), 296–312.
+- McHarg, I. L. (1969). *Design with Nature*. Natural History Press.
+- Meadows, D. H., Meadows, D. L., Randers, J., & Behrens, W. W. (1972). *The Limits to Growth*. Universe Books.
+- Ostrom, E. (1990). *Governing the Commons: The Evolution of Institutions for Collective Action*. Cambridge University Press.
+- Rockström, J., et al. (2009). A safe operating space for humanity. *Nature*, 461, 472–475.
+- World Commission on Environment and Development. (1987). *Our Common Future*. Oxford University Press.

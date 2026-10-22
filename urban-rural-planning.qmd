@@ -1,0 +1,66 @@
+---
+body-classes: p-rural
+title: "Urban–Rural Planning"
+description: "How city growth and policy reach rural Florida."
+---
+
+![](assets/art/theme-rural.webp){.banner fig-alt="Patchwork of farm parcels crossed by a county road"}
+
+Rural places often absorb the costs of urban growth. I study how state and local policy plays out across the urban–rural divide.
+
+```{=html}
+<ul class="tags c-rural"><li>Regional growth</li><li>Farmland</li><li>Local governance</li><li>Regulation</li></ul>
+```
+
+## A Short History of Urban–Rural Planning
+
+Planners have argued for more than a century about how cities and the countryside depend on each other. The divide has always been blurrier than the maps suggest.
+
+```{=html}
+<details class="history">
+<summary><span class="sum-open">Show the timeline</span><span class="sum-close">Hide the timeline</span> <span class="sum-meta">13 moments, 1898–2024</span></summary>
+<ol class="timeline">
+  <li class="era">Early ideas</li>
+  <li><span class="yr">1898</span><div><h4>The town-country magnet</h4><p>Ebenezer Howard's garden city idea tries to combine the best of city and countryside in one planned community.</p></div></li>
+  <li><span class="yr">1915</span><div><h4>The city-region</h4><p>Patrick Geddes's <em>Cities in Evolution</em> treats a city and its surrounding region as one connected system.</p></div></li>
+  <li><span class="yr">1923</span><div><h4>Regional planning in the U.S.</h4><p>Lewis Mumford, Benton MacKaye, and others form the Regional Planning Association of America to plan whole regions, not just cities.</p></div></li>
+  <li><span class="yr">1933</span><div><h4>Tennessee Valley Authority</h4><p>The federal government takes on large-scale regional planning in the rural South, from dams to electricity to land management.</p></div></li>
+  <li class="era">Growth at the edge</li>
+  <li><span class="yr">1956</span><div><h4>Interstate highways</h4><p>The Federal-Aid Highway Act speeds suburban and exurban growth into farmland at the urban fringe.</p></div></li>
+  <li><span class="yr">1981</span><div><h4>Farmland Protection Policy Act</h4><p>Federal projects must consider how they convert farmland to other uses.</p></div></li>
+  <li class="era">Rethinking the divide</li>
+  <li><span class="yr">1998</span><div><h4>Rural-urban interactions</h4><p>Cecilia Tacoli argues flows of people, goods, money, and waste between city and country matter more than the line between them.</p></div></li>
+  <li><span class="yr">2011</span><div><h4>Rural America in an urban society</h4><p>Daniel Lichter and David Brown show how rural places are tied into urban economies, labor markets, and politics.</p></div></li>
+  <li><span class="yr">2014</span><div><h4>Planetary urbanization</h4><p>Neil Brenner and Christian Schmid argue urbanization reshapes even remote landscapes through mines, farms, and infrastructure.</p></div></li>
+  <li class="era">Rural environmental justice</li>
+  <li><span class="yr">2016</span><div><h4>Urban-rural exploitation</h4><p>Kelly-Reif and Wing name the pattern of cities exporting burdens like waste, pollution, and industrial farming to rural communities.</p></div></li>
+  <li><span class="yr">2016</span><div><h4>Rural voices in EJ</h4><p>David Pellow calls on environmental justice and rural studies scholars to work together, and Ashwood and MacTavish show how rural residents get outvoted on decisions that put burdens in their communities.</p></div></li>
+  <li><span class="yr">2019</span><div><h4>Urban-Rural Linkages</h4><p>UN-Habitat publishes guiding principles for planning cities and rural areas together.</p></div></li>
+  <li><span class="yr">2024</span><div><h4>Landscapes in transition</h4><p>Brown and colleagues show how climate-driven landscape changes in Europe, from energy projects to conservation, create new rural justice conflicts.</p></div></li>
+</ol>
+</details>
+```
+
+## In Florida
+
+Florida's cities depend on rural land for food, water, and space for what cities produce, from farmland to waste. Rural counties often have fewer planning resources to shape how that relationship works.
+
+```{=html}
+<ol class="timeline compact">
+  <li><span class="yr">1979</span><div><h4>Right to Farm Act</h4><p>Florida protects farm operations from nuisance claims. Later amendments bar local governments from restricting farm activities covered by state best management practices.</p></div></li>
+  <li><span class="yr">1985</span><div><h4>Growth Management Act</h4><p>Every city and county must adopt a comprehensive plan, including how rural land is used.</p></div></li>
+  <li><span class="yr">1999</span><div><h4>Florida Forever</h4><p>The state launches a land conservation program that buys and protects natural and rural lands.</p></div></li>
+  <li><span class="yr">2011</span><div><h4>Community Planning Act</h4><p>State review of local plans is scaled back, leaving rural counties with fewer planning resources to manage growth pressure.</p></div></li>
+  <li><span class="yr">2026</span><div><h4>Biosolids flows</h4><p>My research traces how biosolids produced in Florida's metro counties are applied in less populated rural counties.</p></div></li>
+</ol>
+```
+
+## Key Readings
+
+- Ashwood, L., &amp; MacTavish, K. (2016). Tyranny of the majority and rural environmental injustice. <em>Journal of Rural Studies</em>, 47.
+- Brenner, N., & Schmid, C. (2014). The 'urban age' in question. <em>International Journal of Urban and Regional Research</em>, 38(3), 731–755.
+- Howard, E. (1902). <em>Garden Cities of To-morrow</em>. Swan Sonnenschein.
+- Kelly-Reif, K., & Wing, S. (2016). Urban-rural exploitation: An underappreciated dimension of environmental injustice. <em>Journal of Rural Studies</em>, 47.
+- Lichter, D. T., & Brown, D. L. (2011). Rural America in an urban society: Changing spatial and social boundaries. <em>Annual Review of Sociology</em>, 37, 565–592.
+- Tacoli, C. (1998). Rural-urban interactions: A guide to the literature. <em>Environment and Urbanization</em>, 10(1), 147–166.
+- Pellow, D. N. (2016). Environmental justice and rural studies: A critical conversation and invitation to collaboration. <em>Journal of Rural Studies</em>, 47, 381–386.

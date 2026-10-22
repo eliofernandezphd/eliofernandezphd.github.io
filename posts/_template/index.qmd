@@ -1,0 +1,40 @@
+---
+title: "Post title"
+description: "One sentence that shows up in the blog list and on social previews."
+date: 2026-01-01
+categories: [maps]
+draft: true
+---
+
+<!--
+POST TEMPLATE (not published: the folder name starts with "_" and draft is true).
+To make a new post: copy this folder to posts/your-post-name/, edit the top section,
+and delete whatever blocks you don't need.
+-->
+
+Opening paragraph: what's the question, and why should someone in Florida care?
+
+## The map
+
+<!-- Interactive web map, ArcGIS StoryMap, or Felt map: paste its share URL -->
+```{=html}
+<div class="embed">
+  <iframe src="https://storymaps.arcgis.com/stories/YOUR_ID" title="Describe the map" loading="lazy" allowfullscreen></iframe>
+</div>
+```
+
+<!-- Or a static map image saved in this folder: -->
+<!-- ![What the map shows, in one sentence](map.png) -->
+
+## What it shows
+
+Two or three short paragraphs.
+
+## Video
+
+<!-- YouTube: use the video ID from the URL -->
+{{< video https://www.youtube.com/watch?v=VIDEO_ID >}}
+
+## Read more
+
+- [Article title](https://example.com), Outlet name
