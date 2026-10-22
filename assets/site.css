@@ -420,3 +420,9 @@ details.history[open] > .timeline { margin-top: 1.4rem; }
 .map-key .k-imp::before { background: rgba(200,102,31,.7); border: 1px solid #963C0A; }
 .map-key .k-ok::before { background: rgba(31,127,153,.3); border: 1px solid rgba(31,127,153,.8); }
 @media (max-width: 600px) { .live-map { aspect-ratio: 4 / 5; } }
+
+/* Slide carousel variant */
+.slide-carousel .mc-slide { padding: 0.8rem 3.5rem 0.7rem; }
+.slide-carousel .mc-slide img { max-height: min(60vh, 30rem); }
+.mc-thumb.wide { width: 8.4rem; }
+.mc-thumb.wide img { aspect-ratio: 16 / 9; }

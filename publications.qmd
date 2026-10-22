@@ -72,3 +72,109 @@ title: "Publications & Talks"
   <p class="links"><a href="https://docs.google.com/presentation/d/1drX3N20pPSXsY3pCFME32kKAvYoDE--1/present">Open slides full screen</a></p>
 </article>
 ```
+
+## Course Projects
+
+```{=html}
+<article class="pub">
+  <div class="pub-head">
+    <p class="kind">Class project, Florida State University</p>
+    <h3>Principal Component Analysis: Pine Island Sound Monitoring Station</h3>
+    <p class="cite">Fernandez, E. A principal component analysis of 12 water quality variables (2009–2018) from a Lee County monitoring station in Pine Island Sound, near the mouth of the Caloosahatchee River.</p>
+  </div>
+<div class="map-carousel slide-carousel" aria-roledescription="carousel" aria-label="PCA presentation slides">
+  <div class="mc-stage">
+    <button type="button" class="mc-arrow mc-prev" aria-label="Previous slide">&#8249;</button>
+    <div class="mc-track" tabindex="0">
+    <figure class="mc-slide" role="group" aria-roledescription="slide" aria-label="1 of 11: Title">
+      <a href="assets/talks/pca/slide-01.webp" class="lightbox" data-gallery="pca-slides" title="Slide 1: Title"><img src="assets/talks/pca/slide-01.webp" alt="Slide 1: Title" loading="eager"></a>
+      <figcaption><span class="mc-count">1 / 11</span> Title</figcaption>
+    </figure>
+    <figure class="mc-slide" role="group" aria-roledescription="slide" aria-label="2 of 11: Pine Island Sound">
+      <a href="assets/talks/pca/slide-02.webp" class="lightbox" data-gallery="pca-slides" title="Slide 2: Pine Island Sound"><img src="assets/talks/pca/slide-02.webp" alt="Slide 2: Pine Island Sound" loading="lazy"></a>
+      <figcaption><span class="mc-count">2 / 11</span> Pine Island Sound</figcaption>
+    </figure>
+    <figure class="mc-slide" role="group" aria-roledescription="slide" aria-label="3 of 11: What is PCA?">
+      <a href="assets/talks/pca/slide-03.webp" class="lightbox" data-gallery="pca-slides" title="Slide 3: What is PCA?"><img src="assets/talks/pca/slide-03.webp" alt="Slide 3: What is PCA?" loading="lazy"></a>
+      <figcaption><span class="mc-count">3 / 11</span> What is PCA?</figcaption>
+    </figure>
+    <figure class="mc-slide" role="group" aria-roledescription="slide" aria-label="4 of 11: Data & methods">
+      <a href="assets/talks/pca/slide-04.webp" class="lightbox" data-gallery="pca-slides" title="Slide 4: Data & methods"><img src="assets/talks/pca/slide-04.webp" alt="Slide 4: Data & methods" loading="lazy"></a>
+      <figcaption><span class="mc-count">4 / 11</span> Data & methods</figcaption>
+    </figure>
+    <figure class="mc-slide" role="group" aria-roledescription="slide" aria-label="5 of 11: Reducing dimensionality">
+      <a href="assets/talks/pca/slide-05.webp" class="lightbox" data-gallery="pca-slides" title="Slide 5: Reducing dimensionality"><img src="assets/talks/pca/slide-05.webp" alt="Slide 5: Reducing dimensionality" loading="lazy"></a>
+      <figcaption><span class="mc-count">5 / 11</span> Reducing dimensionality</figcaption>
+    </figure>
+    <figure class="mc-slide" role="group" aria-roledescription="slide" aria-label="6 of 11: Loadings">
+      <a href="assets/talks/pca/slide-06.webp" class="lightbox" data-gallery="pca-slides" title="Slide 6: Loadings"><img src="assets/talks/pca/slide-06.webp" alt="Slide 6: Loadings" loading="lazy"></a>
+      <figcaption><span class="mc-count">6 / 11</span> Loadings</figcaption>
+    </figure>
+    <figure class="mc-slide" role="group" aria-roledescription="slide" aria-label="7 of 11: Correlation matrix">
+      <a href="assets/talks/pca/slide-07.webp" class="lightbox" data-gallery="pca-slides" title="Slide 7: Correlation matrix"><img src="assets/talks/pca/slide-07.webp" alt="Slide 7: Correlation matrix" loading="lazy"></a>
+      <figcaption><span class="mc-count">7 / 11</span> Correlation matrix</figcaption>
+    </figure>
+    <figure class="mc-slide" role="group" aria-roledescription="slide" aria-label="8 of 11: PC1: Salinity & nutrients">
+      <a href="assets/talks/pca/slide-08.webp" class="lightbox" data-gallery="pca-slides" title="Slide 8: PC1: Salinity & nutrients"><img src="assets/talks/pca/slide-08.webp" alt="Slide 8: PC1: Salinity & nutrients" loading="lazy"></a>
+      <figcaption><span class="mc-count">8 / 11</span> PC1: Salinity & nutrients</figcaption>
+    </figure>
+    <figure class="mc-slide" role="group" aria-roledescription="slide" aria-label="9 of 11: PC2: Oxygen & temperature">
+      <a href="assets/talks/pca/slide-09.webp" class="lightbox" data-gallery="pca-slides" title="Slide 9: PC2: Oxygen & temperature"><img src="assets/talks/pca/slide-09.webp" alt="Slide 9: PC2: Oxygen & temperature" loading="lazy"></a>
+      <figcaption><span class="mc-count">9 / 11</span> PC2: Oxygen & temperature</figcaption>
+    </figure>
+    <figure class="mc-slide" role="group" aria-roledescription="slide" aria-label="10 of 11: PC3: pH & ammonia">
+      <a href="assets/talks/pca/slide-10.webp" class="lightbox" data-gallery="pca-slides" title="Slide 10: PC3: pH & ammonia"><img src="assets/talks/pca/slide-10.webp" alt="Slide 10: PC3: pH & ammonia" loading="lazy"></a>
+      <figcaption><span class="mc-count">10 / 11</span> PC3: pH & ammonia</figcaption>
+    </figure>
+    <figure class="mc-slide" role="group" aria-roledescription="slide" aria-label="11 of 11: Conclusion">
+      <a href="assets/talks/pca/slide-11.webp" class="lightbox" data-gallery="pca-slides" title="Slide 11: Conclusion"><img src="assets/talks/pca/slide-11.webp" alt="Slide 11: Conclusion" loading="lazy"></a>
+      <figcaption><span class="mc-count">11 / 11</span> Conclusion</figcaption>
+    </figure>
+    </div>
+    <button type="button" class="mc-arrow mc-next" aria-label="Next slide">&#8250;</button>
+  </div>
+  <div class="mc-thumbs">
+    <button type="button" class="mc-thumb wide" data-i="0" aria-label="Show slide 1: Title"><img src="assets/talks/pca/slide-01.webp" alt=""><span>Title</span></button>
+    <button type="button" class="mc-thumb wide" data-i="1" aria-label="Show slide 2: Pine Island Sound"><img src="assets/talks/pca/slide-02.webp" alt=""><span>Pine Island Sound</span></button>
+    <button type="button" class="mc-thumb wide" data-i="2" aria-label="Show slide 3: What is PCA?"><img src="assets/talks/pca/slide-03.webp" alt=""><span>What is PCA?</span></button>
+    <button type="button" class="mc-thumb wide" data-i="3" aria-label="Show slide 4: Data & methods"><img src="assets/talks/pca/slide-04.webp" alt=""><span>Data & methods</span></button>
+    <button type="button" class="mc-thumb wide" data-i="4" aria-label="Show slide 5: Reducing dimensionality"><img src="assets/talks/pca/slide-05.webp" alt=""><span>Reducing dimensionality</span></button>
+    <button type="button" class="mc-thumb wide" data-i="5" aria-label="Show slide 6: Loadings"><img src="assets/talks/pca/slide-06.webp" alt=""><span>Loadings</span></button>
+    <button type="button" class="mc-thumb wide" data-i="6" aria-label="Show slide 7: Correlation matrix"><img src="assets/talks/pca/slide-07.webp" alt=""><span>Correlation matrix</span></button>
+    <button type="button" class="mc-thumb wide" data-i="7" aria-label="Show slide 8: PC1: Salinity & nutrients"><img src="assets/talks/pca/slide-08.webp" alt=""><span>PC1: Salinity & nutrients</span></button>
+    <button type="button" class="mc-thumb wide" data-i="8" aria-label="Show slide 9: PC2: Oxygen & temperature"><img src="assets/talks/pca/slide-09.webp" alt=""><span>PC2: Oxygen & temperature</span></button>
+    <button type="button" class="mc-thumb wide" data-i="9" aria-label="Show slide 10: PC3: pH & ammonia"><img src="assets/talks/pca/slide-10.webp" alt=""><span>PC3: pH & ammonia</span></button>
+    <button type="button" class="mc-thumb wide" data-i="10" aria-label="Show slide 11: Conclusion"><img src="assets/talks/pca/slide-11.webp" alt=""><span>Conclusion</span></button>
+  </div>
+</div>
+<script>
+(function () {
+  var root = document.currentScript.previousElementSibling;
+  var track = root.querySelector(".mc-track");
+  var slides = root.querySelectorAll(".mc-slide");
+  var thumbs = root.querySelectorAll(".mc-thumb");
+  var n = slides.length, cur = 0;
+  function go(i, smooth) {
+    cur = (i + n) % n;
+    track.scrollTo({ left: slides[cur].offsetLeft - track.offsetLeft, behavior: smooth === false ? "auto" : "smooth" });
+    mark();
+  }
+  function mark() { thumbs.forEach(function (t, k) { t.classList.toggle("on", k === cur); t.setAttribute("aria-current", k === cur ? "true" : "false"); }); }
+  root.querySelector(".mc-prev").addEventListener("click", function () { go(cur - 1); });
+  root.querySelector(".mc-next").addEventListener("click", function () { go(cur + 1); });
+  thumbs.forEach(function (t) { t.addEventListener("click", function () { go(+t.dataset.i); }); });
+  track.addEventListener("keydown", function (e) {
+    if (e.key === "ArrowRight") { go(cur + 1); e.preventDefault(); }
+    if (e.key === "ArrowLeft") { go(cur - 1); e.preventDefault(); }
+  });
+  var t;
+  track.addEventListener("scroll", function () {
+    clearTimeout(t);
+    t = setTimeout(function () { cur = Math.round(track.scrollLeft / track.clientWidth); mark(); }, 80);
+  }, { passive: true });
+  mark();
+})();
+</script>
+  <p class="links"><a href="assets/talks/pca/Fernandez-PCA-Pine-Island-Sound.pdf">Download the slides (PDF)</a> <a href="water-quality.html">More on water quality</a></p>
+</article>
+```

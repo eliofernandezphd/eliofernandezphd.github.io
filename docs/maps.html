@@ -200,79 +200,96 @@ ul.task-list li input[type="checkbox"] {
   <div id="impaired-map" role="region" aria-label="Map of Florida waterbodies showing which are on the state's verified impaired list"></div>
   <div class="map-status" id="impaired-status">Loading Florida DEP data…</div>
 </div>
-<script>
-setTimeout(function () {
-  var st = document.getElementById("impaired-status");
-  if (st && !st.hidden) st.innerHTML = "The map couldn't load here. <a href='https://geodata.dep.state.fl.us/datasets/FDEP::waterbody-ids-wbids/about'>View the data on Florida DEP's site</a>.";
-}, 45000);
-</script>
 <script src="https://js.arcgis.com/4.30/"></script>
 <script>
-require([
-  "esri/Map", "esri/views/MapView", "esri/layers/FeatureLayer", "esri/layers/TileLayer", "esri/Basemap",
-  "esri/widgets/Legend", "esri/widgets/Expand", "esri/widgets/Home"
-], function (Map, MapView, FeatureLayer, TileLayer, Basemap, Legend, Expand, Home) {
+(function () {
   var status = document.getElementById("impaired-status");
+  var notes = [];
+  function say(msg) { status.hidden = false; status.innerHTML = msg; }
+  function fail(why) {
+    notes.push(why); console.warn("[impaired-map]", why);
+    say("The state's map data didn't load. <a href='https://geodata.dep.state.fl.us/datasets/FDEP::waterbody-ids-wbids/about'>View it on Florida DEP's site</a>.<br><small>Details: " + notes.join("; ") + "</small>");
+  }
+  window.addEventListener("error", function (e) { if (e && e.message) notes.push("script: " + e.message); });
+  if (typeof require !== "function") { fail("the ArcGIS map library didn't load"); return; }
+  setTimeout(function () { if (!status.hidden && /^Loading/.test(status.textContent)) fail("timed out after 60 seconds"); }, 60000);
+
   var DEP = "https://ca.dep.state.fl.us/arcgis/rest/services/OpenData/";
-  var FALLBACK_VERIFIED = "https://taurus.at.geoplan.ufl.edu/arcgis/rest/services/fgdl/FDEP_Water/MapServer/8";
+  var UF = "https://taurus.at.geoplan.ufl.edu/arcgis/rest/services/fgdl/FDEP_Water/MapServer";
 
-  var basemap = new Basemap({ baseLayers: [new TileLayer({
-    url: "https://services.arcgisonline.com/arcgis/rest/services/Canvas/World_Light_Gray_Base/MapServer"
-  })] });
-
-  function popup(title) {
-    return { title: title, outFields: ["*"], content: function (f) {
-      var a = f.graphic.attributes, rows = "";
-      Object.keys(a).forEach(function (k) {
-        if (/^(objectid|fid|shape|globalid|autoid)/i.test(k) || a[k] === null || a[k] === "") return;
-        if (!/(wbid|name|param|class|type|cause|basin|group|cycle|county|status|category)/i.test(k)) return;
-        rows += "<tr><th>" + k.replace(/_/g, " ").toLowerCase() + "</th><td>" + a[k] + "</td></tr>";
-      });
-      return rows ? "<table class='esri-widget__table'>" + rows + "</table>" : "No details available.";
-    }};
+  function getJSON(u) {
+    return fetch(u + (u.indexOf("?") > -1 ? "&" : "?") + "f=json").then(function (r) {
+      if (!r.ok) throw new Error("HTTP " + r.status); return r.json();
+    }).then(function (j) { if (j.error) throw new Error(j.error.message || "service error"); return j; });
   }
-  function fill(c, o) { return { type: "simple-fill", color: c, outline: { color: o, width: 0.5 } }; }
-
-  var view = new MapView({ container: "impaired-map", map: new Map({ basemap: basemap }),
-    center: [-83.6, 27.9], zoom: 6, constraints: { minZoom: 5 }, popup: { dockEnabled: false } });
-  view.ui.add(new Home({ view: view }), "top-left");
-  view.ui.add(new Expand({ view: view, expanded: window.innerWidth > 700,
-    content: new Legend({ view: view }), expandTooltip: "Legend" }), "bottom-left");
-
-  // All assessed waterbodies: Florida DEP Waterbody IDs
-  var all = new FeatureLayer({ url: DEP + "WBIDS/MapServer/0", title: "Waterbodies (WBIDs)", outFields: ["*"],
-    renderer: { type: "simple", label: "Not on the verified impaired list", symbol: fill([31,127,153,0.28], [31,127,153,0.7]) },
-    popupTemplate: popup("Waterbody") });
-  view.map.add(all);
-
-  // Find the verified impaired layer in DEP's impaired waters service
-  function json(u) { return fetch(u + (u.indexOf("?") > -1 ? "&" : "?") + "f=json").then(function (r) { return r.json(); }); }
-  function findVerified() {
-    return json(DEP + "IMPAIRED_WATERS/MapServer").then(function (svc) {
-      var hit = (svc.layers || []).filter(function (l) { return /verified/i.test(l.name) && !/delist/i.test(l.name); })[0];
-      if (!hit) throw new Error("no verified layer");
-      return DEP + "IMPAIRED_WATERS/MapServer/" + hit.id;
-    }).catch(function () { return FALLBACK_VERIFIED; });
+  function firstLayer(svcUrl, re, not) {
+    return getJSON(svcUrl).then(function (svc) {
+      var hit = (svc.layers || []).filter(function (l) { return re.test(l.name) && !(not && not.test(l.name)) && !(l.subLayerIds && l.subLayerIds.length); })[0];
+      if (!hit) throw new Error("no matching layer in " + svcUrl.split("/").slice(-2)[0]);
+      return svcUrl + "/" + hit.id;
+    });
+  }
+  function tryAll(cands, label) {
+    var i = 0;
+    function next(err) {
+      if (err) notes.push(label + ": " + err.message);
+      if (i >= cands.length) return Promise.reject(new Error(label + " unavailable"));
+      return cands[i++]().catch(next);
+    }
+    return next();
   }
 
-  var ok = 0, bad = [];
-  function report() {
-    if (ok + bad.length < 2) return;
-    if (!ok) status.innerHTML = "The state's map data didn't load. <a href='https://geodata.dep.state.fl.us/datasets/FDEP::waterbody-ids-wbids/about'>View it on Florida DEP's site</a>.";
-    else status.hidden = true;
-    if (bad.length) console.warn("[impaired-map] failed:", bad);
-  }
-  all.load().then(function () { ok++; report(); }, function (e) { bad.push(["WBIDs", e && e.message]); report(); });
+  require([
+    "esri/Map", "esri/views/MapView", "esri/layers/FeatureLayer", "esri/layers/TileLayer", "esri/Basemap",
+    "esri/widgets/Legend", "esri/widgets/Expand", "esri/widgets/Home"
+  ], function (Map, MapView, FeatureLayer, TileLayer, Basemap, Legend, Expand, Home) {
+    try {
+      var view = new MapView({ container: "impaired-map",
+        map: new Map({ basemap: new Basemap({ baseLayers: [new TileLayer({ url: "https://services.arcgisonline.com/arcgis/rest/services/Canvas/World_Light_Gray_Base/MapServer" })] }) }),
+        center: [-83.6, 27.9], zoom: 6, constraints: { minZoom: 5 } });
+      view.ui.add(new Home({ view: view }), "top-left");
+      view.ui.add(new Expand({ view: view, expanded: window.innerWidth > 700, content: new Legend({ view: view }), expandTooltip: "Legend" }), "bottom-left");
+    } catch (e) { fail("map setup: " + e.message); return; }
 
-  findVerified().then(function (url) {
-    var impaired = new FeatureLayer({ url: url, title: "Verified impaired", outFields: ["*"],
-      renderer: { type: "simple", label: "Verified impaired (needs a pollution limit, or TMDL)", symbol: fill([200,102,31,0.6], [150,60,10,0.9]) },
-      popupTemplate: popup("Impaired waterbody") });
-    view.map.add(impaired);
-    impaired.load().then(function () { ok++; report(); console.info("[impaired-map] verified layer:", url); },
-                         function (e) { bad.push(["verified", e && e.message]); report(); });
+    function popup(title) {
+      return { title: title, outFields: ["*"], content: function (f) {
+        var a = f.graphic.attributes, rows = "";
+        Object.keys(a).forEach(function (k) {
+          if (/^(objectid|fid|shape|globalid|autoid)/i.test(k) || a[k] === null || a[k] === "") return;
+          if (!/(wbid|name|param|class|type|cause|basin|group|cycle|county|status|category)/i.test(k)) return;
+          rows += "<tr><th>" + k.replace(/_/g, " ").toLowerCase() + "</th><td>" + a[k] + "</td></tr>";
+        });
+        return rows ? "<table class='esri-widget__table'>" + rows + "</table>" : "No details available.";
+      }};
+    }
+    function addLayer(url, title, label, color, outline) {
+      var lyr = new FeatureLayer({ url: url, title: title, outFields: ["*"], popupTemplate: popup(title),
+        renderer: { type: "simple", label: label, symbol: { type: "simple-fill", color: color, outline: { color: outline, width: 0.5 } } } });
+      view.map.add(lyr);
+      return lyr.load().then(function () { console.info("[impaired-map] loaded", title, url); return lyr; });
+    }
+
+    var wbidUrl = tryAll([
+      function () { return getJSON(DEP + "WBIDS/MapServer/0").then(function () { return DEP + "WBIDS/MapServer/0"; }); },
+      function () { return firstLayer(UF, /(wbid|waterbody id)/i, /verified|delist|impaired/i); }
+    ], "waterbodies");
+    var verUrl = tryAll([
+      function () { return firstLayer(DEP + "IMPAIRED_WATERS/MapServer", /verified/i, /delist/i); },
+      function () { return getJSON(UF + "/8").then(function () { return UF + "/8"; }); }
+    ], "impaired list");
+
+    var good = 0;
+    var p1 = wbidUrl.then(function (u) { return addLayer(u, "Waterbodies (WBIDs)", "Not on the verified impaired list", [31,127,153,0.28], [31,127,153,0.7]); })
+      .then(function () { good++; }, function (e) { notes.push("waterbodies: " + e.message); });
+    var p2 = verUrl.then(function (u) { return addLayer(u, "Verified impaired", "Verified impaired (needs a pollution limit, or TMDL)", [200,102,31,0.6], [150,60,10,0.9]); })
+      .then(function () { good++; }, function (e) { notes.push("impaired: " + e.message); });
+    Promise.all([p1, p2]).then(function () {
+      if (good === 2) status.hidden = true;
+      else if (good === 1) { say("Part of the map loaded. <small>" + notes.join("; ") + "</small>"); setTimeout(function () { status.hidden = true; }, 8000); }
+      else fail("no layers loaded");
+    });
   });
-});
+})();
 </script>
 <div class="map-key"><span class="k-imp">Verified impaired</span><span class="k-ok">Not on the verified impaired list</span></div>
 <p class="map-credit">Data: Florida Department of Environmental Protection, Waterbody IDs and Verified List of Impaired Waters, loaded live from DEP's map server. Waters not on the verified list aren't necessarily healthy. Some have too little data to assess, and others are impaired but already have a pollution limit in place.</p>
