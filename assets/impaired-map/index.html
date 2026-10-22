@@ -85,6 +85,7 @@
       return lyr.load().then(function () {
         // DEP's service hides layers when zoomed out; show them at every zoom level
         lyr.minScale = 0; lyr.maxScale = 0;
+        view.whenLayerView(lyr).then(function () { lyr.refresh(); });
         console.info("[impaired-map] loaded", title, url); return lyr;
       });
     }
@@ -104,6 +105,8 @@
     var p2 = verUrl.then(function (u) { return addLayer(u, "Verified impaired", "Verified impaired (needs a pollution limit, or TMDL)", [200,102,31,0.6], [150,60,10,0.9]); })
       .then(function () { good++; }, function (e) { notes.push("impaired: " + e.message); });
     Promise.all([p1, p2]).then(function () {
+      // Nudge the view once so the newly visible layers draw at the starting zoom
+      view.when(function () { var c = view.center.clone(); view.goTo({ center: c, zoom: view.zoom + 0.001 }, { animate: false }).then(function () { return view.goTo({ center: c, zoom: 6 }, { animate: false }); }).catch(function () {}); });
       if (good === 2) status.hidden = true;
       else if (good === 1) { say("Part of the map loaded. <small>" + notes.join("; ") + "</small>"); setTimeout(function () { status.hidden = true; }, 8000); }
       else fail("no layers loaded");
