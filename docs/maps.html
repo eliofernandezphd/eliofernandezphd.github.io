@@ -204,7 +204,7 @@ ul.task-list li input[type="checkbox"] {
 setTimeout(function () {
   var st = document.getElementById("impaired-status");
   if (st && !st.hidden) st.innerHTML = "The map couldn't load here. <a href='https://geodata.dep.state.fl.us/datasets/FDEP::waterbody-ids-wbids/about'>View the data on Florida DEP's site</a>.";
-}, 20000);
+}, 45000);
 </script>
 <script src="https://js.arcgis.com/4.30/"></script>
 <script>
@@ -213,14 +213,15 @@ require([
   "esri/widgets/Legend", "esri/widgets/Expand", "esri/widgets/Home"
 ], function (Map, MapView, FeatureLayer, TileLayer, Basemap, Legend, Expand, Home) {
   var status = document.getElementById("impaired-status");
+  var DEP = "https://ca.dep.state.fl.us/arcgis/rest/services/OpenData/";
+  var FALLBACK_VERIFIED = "https://taurus.at.geoplan.ufl.edu/arcgis/rest/services/fgdl/FDEP_Water/MapServer/8";
 
   var basemap = new Basemap({ baseLayers: [new TileLayer({
     url: "https://services.arcgisonline.com/arcgis/rest/services/Canvas/World_Light_Gray_Base/MapServer"
   })] });
 
-  // Popup that shows whatever descriptive fields the state's data has
   function popup(title) {
-    return { title: title, content: function (f) {
+    return { title: title, outFields: ["*"], content: function (f) {
       var a = f.graphic.attributes, rows = "";
       Object.keys(a).forEach(function (k) {
         if (/^(objectid|fid|shape|globalid|autoid)/i.test(k) || a[k] === null || a[k] === "") return;
@@ -230,49 +231,51 @@ require([
       return rows ? "<table class='esri-widget__table'>" + rows + "</table>" : "No details available.";
     }};
   }
+  function fill(c, o) { return { type: "simple-fill", color: c, outline: { color: o, width: 0.5 } }; }
 
-  // All assessed waterbodies (Florida DEP Waterbody IDs)
-  var all = new FeatureLayer({
-    portalItem: { id: "d3bb23dc9507422a86c95eb5efc964c9" },
-    title: "Waterbodies (WBIDs)",
-    outFields: ["*"],
-    renderer: { type: "simple", label: "Not on the verified impaired list",
-      symbol: { type: "simple-fill", color: [31, 127, 153, 0.28], outline: { color: [31, 127, 153, 0.7], width: 0.4 } } },
-    popupTemplate: popup("Waterbody")
-  });
-
-  // Waterbodies on Florida's verified impaired list
-  var impaired = new FeatureLayer({
-    portalItem: { id: "89be6289aaca45dfb197ccd485f833cd" }, layerId: 5,
-    title: "Verified impaired",
-    outFields: ["*"],
-    renderer: { type: "simple", label: "Verified impaired (needs a pollution limit, or TMDL)",
-      symbol: { type: "simple-fill", color: [200, 102, 31, 0.6], outline: { color: [150, 60, 10, 0.9], width: 0.5 } } },
-    popupTemplate: popup("Impaired waterbody")
-  });
-
-  var map = new Map({ basemap: basemap, layers: [all, impaired] });
-  var view = new MapView({ container: "impaired-map", map: map, center: [-83.6, 27.9], zoom: 6,
-    constraints: { minZoom: 5 }, popup: { dockEnabled: false } });
-
+  var view = new MapView({ container: "impaired-map", map: new Map({ basemap: basemap }),
+    center: [-83.6, 27.9], zoom: 6, constraints: { minZoom: 5 }, popup: { dockEnabled: false } });
   view.ui.add(new Home({ view: view }), "top-left");
   view.ui.add(new Expand({ view: view, expanded: window.innerWidth > 700,
     content: new Legend({ view: view }), expandTooltip: "Legend" }), "bottom-left");
 
-  var loaded = 0, failed = 0;
-  function done() {
-    if (loaded + failed < 2) return;
-    if (failed === 2) {
-      status.innerHTML = "The state's map data didn't load. <a href='https://geodata.dep.state.fl.us/datasets/FDEP::waterbody-ids-wbids/about'>View it on Florida DEP's site</a>.";
-    } else { status.hidden = true; }
+  // All assessed waterbodies: Florida DEP Waterbody IDs
+  var all = new FeatureLayer({ url: DEP + "WBIDS/MapServer/0", title: "Waterbodies (WBIDs)", outFields: ["*"],
+    renderer: { type: "simple", label: "Not on the verified impaired list", symbol: fill([31,127,153,0.28], [31,127,153,0.7]) },
+    popupTemplate: popup("Waterbody") });
+  view.map.add(all);
+
+  // Find the verified impaired layer in DEP's impaired waters service
+  function json(u) { return fetch(u + (u.indexOf("?") > -1 ? "&" : "?") + "f=json").then(function (r) { return r.json(); }); }
+  function findVerified() {
+    return json(DEP + "IMPAIRED_WATERS/MapServer").then(function (svc) {
+      var hit = (svc.layers || []).filter(function (l) { return /verified/i.test(l.name) && !/delist/i.test(l.name); })[0];
+      if (!hit) throw new Error("no verified layer");
+      return DEP + "IMPAIRED_WATERS/MapServer/" + hit.id;
+    }).catch(function () { return FALLBACK_VERIFIED; });
   }
-  [all, impaired].forEach(function (l) {
-    l.load().then(function () { loaded++; done(); }, function () { failed++; done(); });
+
+  var ok = 0, bad = [];
+  function report() {
+    if (ok + bad.length < 2) return;
+    if (!ok) status.innerHTML = "The state's map data didn't load. <a href='https://geodata.dep.state.fl.us/datasets/FDEP::waterbody-ids-wbids/about'>View it on Florida DEP's site</a>.";
+    else status.hidden = true;
+    if (bad.length) console.warn("[impaired-map] failed:", bad);
+  }
+  all.load().then(function () { ok++; report(); }, function (e) { bad.push(["WBIDs", e && e.message]); report(); });
+
+  findVerified().then(function (url) {
+    var impaired = new FeatureLayer({ url: url, title: "Verified impaired", outFields: ["*"],
+      renderer: { type: "simple", label: "Verified impaired (needs a pollution limit, or TMDL)", symbol: fill([200,102,31,0.6], [150,60,10,0.9]) },
+      popupTemplate: popup("Impaired waterbody") });
+    view.map.add(impaired);
+    impaired.load().then(function () { ok++; report(); console.info("[impaired-map] verified layer:", url); },
+                         function (e) { bad.push(["verified", e && e.message]); report(); });
   });
 });
 </script>
 <div class="map-key"><span class="k-imp">Verified impaired</span><span class="k-ok">Not on the verified impaired list</span></div>
-<p class="map-credit">Data: Florida Department of Environmental Protection, Waterbody IDs and Verified List of Impaired Waters (2022–24 assessment). Waters not on the verified list aren't necessarily healthy. Some have too little data to assess, and others are impaired but already have a pollution limit in place.</p>
+<p class="map-credit">Data: Florida Department of Environmental Protection, Waterbody IDs and Verified List of Impaired Waters, loaded live from DEP's map server. Waters not on the verified list aren't necessarily healthy. Some have too little data to assess, and others are impaired but already have a pollution limit in place.</p>
 </section>
 <section id="more-maps-coming" class="level2">
 <h2 class="anchored" data-anchor-id="more-maps-coming">More Maps Coming</h2>
