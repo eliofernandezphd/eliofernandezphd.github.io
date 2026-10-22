@@ -4,6 +4,7 @@ project:
   resources:
     - assets/maps/*
     - assets/talks/**
+    - assets/impaired-map/**
   render:
     - "*.qmd"
     - "!posts/_template/"
