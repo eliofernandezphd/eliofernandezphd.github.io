@@ -79,10 +79,14 @@
       }};
     }
     function addLayer(url, title, label, color, outline) {
-      var lyr = new FeatureLayer({ url: url, title: title, outFields: ["*"], popupTemplate: popup(title),
+      var lyr = new FeatureLayer({ url: url, title: title, outFields: ["*"], popupTemplate: popup(title), minScale: 0, maxScale: 0,
         renderer: { type: "simple", label: label, symbol: { type: "simple-fill", color: color, outline: { color: outline, width: 0.5 } } } });
       view.map.add(lyr);
-      return lyr.load().then(function () { console.info("[impaired-map] loaded", title, url); return lyr; });
+      return lyr.load().then(function () {
+        // DEP's service hides layers when zoomed out; show them at every zoom level
+        lyr.minScale = 0; lyr.maxScale = 0;
+        console.info("[impaired-map] loaded", title, url); return lyr;
+      });
     }
 
     var wbidUrl = tryAll([
